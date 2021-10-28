@@ -118,8 +118,8 @@ def DrawRect(Sid, result, Color, Alpha):
     title=result[0][0]
     examDate=result[0][1]
     plt.rcParams['font.sans-serif'] = ['Taipei Sans TC Beta']
-    font={'family': 'DFKai-SB'}
-    plt.rc('font', **font)
+    #font={'family': 'DFKai-SB'}
+    #plt.rc('font', **font)
 
     A = plt.bar(index, scoreList, bar_width, alpha=Alpha, label=examDate, color=[Color]) 
 
