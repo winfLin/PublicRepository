@@ -5,12 +5,12 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="shortcut icon" href="/static/favicon.ico">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 
-	<title>ScoreRankA{% block title %}{% endblock %}</title>
+	<title>ScoreRankA- 級距表</title>
 	<style>
 		footer div {
 			padding: 15px 0;
@@ -23,13 +23,28 @@
 			margin: 0 0 300 0;
 		}
 
-		{% block MyStyle %}
+		
+img {
+  display:block; margin:auto;
+}
 
-		{% endblock %}
+
 	</style>
 	<script>
-		{% block MyJS %}
-		{% endblock %}
+		
+function myCopy() {
+var myURL = document.getElementById("myURL");
+myURL.select();
+myURL.setSelectionRange(0, 99999); /* For mobile devices */
+
+document.execCommand('copy');
+alert( myURL.value + ' 已複製至剪貼簿');
+
+navigator.clipboard.writeText(myURL.value);
+
+}
+
+
 	</script>
 
 </head>
@@ -60,7 +75,81 @@
 	<br><br><br><br>
 	<main>
 		<!-- 可供更改的部分 -->
-		{% block main %}{% endblock %}
+		
+<input type="text" size="60" value="https://192.168.0.39/c0b40d98b272203b9364fad27d411338" id="myURL"><button onclick="myCopy();">複製網址</button>
+<h2>級距表</h2>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        
+        <th>Title</th>
+        
+        <th>ExamDate</th>
+        
+        <th>0~9</th>
+        
+        <th>10~19</th>
+        
+        <th>20~29</th>
+        
+        <th>30~39</th>
+        
+        <th>40~49</th>
+        
+        <th>50~59</th>
+        
+        <th>60~69</th>
+        
+        <th>70~79</th>
+        
+        <th>80~89</th>
+        
+        <th>90~</th>
+        
+        <th>平均</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      
+      <tr>
+        
+        <td align="center">中正國中1年1班國文科第4課</td>
+        
+        <td align="center">2021-10-14</td>
+        
+        <td align="center">0</td>
+        
+        <td align="center">1</td>
+        
+        <td align="center">2</td>
+        
+        <td align="center">2</td>
+        
+        <td align="center">0</td>
+        
+        <td align="center">0</td>
+        
+        <td align="center">0</td>
+        
+        <td align="center">0</td>
+        
+        <td align="center">0</td>
+        
+        <td align="center">0</td>
+        
+        <td align="center">22.8</td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+  <img src=/static/rankImg/c0b40d98b272203b9364fad27d411338.png border="1" />
+  <img src="static/rankImg/c0b40d98b272203b9364fad27d411338.png" border="1" />
+</div>
+
 	</main>
 
 

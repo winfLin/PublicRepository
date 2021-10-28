@@ -147,6 +147,7 @@ def DrawRect(Sid, result, Color, Alpha):
 if __name__ == '__main__':
     #app.secret_key = os.urandom(24)
     #app.secret_key = 'super secret key'
-    app.config['SERVER_NAME'] = "scorerank.azurewebsites.net"  # fine
+    app.config['SERVER_NAME'] = "scoreranka.herokuapp.com"  # fine
+    #app.config['SERVER_NAME'] = "192.168.0.39"  # fine
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run('0.0.0.0', 80, debug=False)
+    app.run('0.0.0.0', 80, debug=True)
