@@ -77,7 +77,7 @@ def SetScore(step):
         Sid=Score2DB(Title, ExamDate, Scores)  
         Rank(Sid, Color, Alpha) 
         return redirect('/' + Sid)
-          
+
 
 def Rank(Sid, Color, Alpha):    
     fpath='templates/rec/' + Sid + ".html"        
