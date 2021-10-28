@@ -20,6 +20,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 domain = 'scoreranka.herokuapp.com'
+#domain = '192.168.0.39'
 
 db_settings = {
     "host": "us-cdbr-east-04.cleardb.com",
@@ -61,7 +62,6 @@ def index():
 @app.route('/<string:Sid>')
 def ShowRank(Sid):
     return render_template('rec/' + Sid + '.html')
-    
 
 
 @app.route('/SetScore/<int:step>', methods=['POST', 'GET'])
@@ -149,6 +149,5 @@ if __name__ == '__main__':
     #app.secret_key = os.urandom(24)
     #app.secret_key = 'super secret key'
     app.config['SERVER_NAME'] = domain  # fine
-    #app.config['SERVER_NAME'] = "192.168.0.39"  # fine
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run('0.0.0.0', 80, debug=False)
+    app.run('0.0.0.0', 80, debug=True)
