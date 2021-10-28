@@ -19,6 +19,7 @@ import hashlib
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+domain = 'scoreranka.herokuapp.com'
 
 db_settings = {
     "host": "us-cdbr-east-04.cleardb.com",
@@ -102,7 +103,7 @@ def Rank(Sid, Color, Alpha):
     print('-'*30)
     DrawRect(Sid, result, Color, Alpha)
     #return render_template('Rank.html')
-    Html = render_template('Rank.html', result=result, header=header, Sid=Sid, domain=app.config['SERVER_NAME'])
+    Html = render_template('Rank.html', result=result, header=header, Sid=Sid, domain=domain)
     f = open(fpath, "w", encoding='UTF-8')
     f.write(Html)
     f.close()    
@@ -147,7 +148,7 @@ def DrawRect(Sid, result, Color, Alpha):
 if __name__ == '__main__':
     #app.secret_key = os.urandom(24)
     #app.secret_key = 'super secret key'
-    app.config['SERVER_NAME'] = "scoreranka.herokuapp.com"  # fine
+    app.config['SERVER_NAME'] = domain  # fine
     #app.config['SERVER_NAME'] = "192.168.0.39"  # fine
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run('0.0.0.0', 80, debug=True)
+    app.run('0.0.0.0', 80, debug=False)
