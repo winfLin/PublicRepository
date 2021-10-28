@@ -20,8 +20,8 @@ import datetime
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-#domain = 'scoreranka.herokuapp.com'
-domain = '192.168.0.39'
+domain = 'scoreranka.herokuapp.com'
+#domain = '192.168.0.39'
 
 db_settings = {
     "host": "us-cdbr-east-04.cleardb.com",
