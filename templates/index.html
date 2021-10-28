@@ -4,17 +4,27 @@
 
 {% block main %}
 <h2>ScoreRankA</h2>
-<div class="jumbotron">
-  ScoreRankA 幫老師及學生, 自動產生成績級距表!
-  <ol>
-    <li>家長線上查, 導師不用再印了 (也就不用再裁切貼了)</li>
-    <li>成績一輸入就可查, 不用等月底</li>
-    <li>任何老師都會用, 不用再擔心資訊能力不足了</li>
-  </ol>
-  <hr>
-</div>
 <div class="container">
+  <div class='row'>
+    ScoreRankA 幫老師及學生, 自動產生成績級距表!
+  </div>
+  <div class='row'>
+    <ol>
+      <li>家長線上查, 導師不用再印了 (也就不用再裁切貼了)</li>
+      <li>成績一輸入就可查, 不用等月底</li>
+      <li>任何老師都會用, 不用再擔心資訊能力不足了</li>
+    </ol>
+  </div>
+</div>
 
+<div class="container">
+  <div class="row justify-content-center">
+    <div>
+      <a class="nav-link active" aria-current="page" href="/SetScore/0">
+        <button type="button" class="btn btn-primary">輸入成績</button>
+      </a>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

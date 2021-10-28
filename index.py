@@ -152,6 +152,6 @@ def DrawRect(Sid, result, Color, Alpha):
 if __name__ == '__main__':
     #app.secret_key = os.urandom(24)
     #app.secret_key = 'super secret key'
-    app.config['SERVER_NAME'] = domain  # fine
+    #app.config['SERVER_NAME'] = domain  # fine
     app.config['SESSION_TYPE'] = 'filesystem'
     app.run('0.0.0.0', 80, debug=True)
