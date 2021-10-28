@@ -11,6 +11,7 @@ from matplotlib import font_manager
 import matplotlib
 from urllib.parse import urlparse
 import hashlib
+import datetime
 
 #SchoolId='中正國中'
 #Grade=
@@ -19,8 +20,8 @@ import hashlib
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-domain = 'scoreranka.herokuapp.com'
-#domain = '192.168.0.39'
+#domain = 'scoreranka.herokuapp.com'
+domain = '192.168.0.39'
 
 db_settings = {
     "host": "us-cdbr-east-04.cleardb.com",
@@ -37,7 +38,10 @@ db_settings = {
 def Score2DB(Title, ExamDate, Scores):
     try:
         r=str(random.random())
-        sid=hashlib.md5(r.encode("utf-8")).hexdigest()              
+        datetime_dt = datetime.datetime.today()  # 獲得當地時間
+        datetime_str = datetime_dt.strftime("%Y%m%d%H%M%S")
+
+        sid=datetime_str + hashlib.md5(r.encode("utf-8")).hexdigest()              
         conn = pymysql.connect(**db_settings)
 
         with conn.cursor() as cursor:              
