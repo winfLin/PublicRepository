@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}- 上傳成績{% endblock %}
+
+{% block main %}
+<h2>上傳成績</h2>
+
+<div class="container">
+  <div class="wrap">
+    <div class="item-group">
+
+      <form method="post" action="SetScore/1">
+        <div class="form-group">
+          <label for="examDate">考試日期</label>
+          <input type="date" class="form-control" id="examDate" name="examDate">
+        </div>
+        <div class="form-group">
+          <label for="examTitle">標題</label>
+          <input type="text" class="form-control" id="examTitle" name="examTitle"
+            placeholder="建議輸入學校班級科目資訊, 例如:中正國中7年9班國文科">
+        </div>
+        <div class="form-group">
+          <label for="examScores">成績</label>
+          <textarea class="form-control" id="examScores" name="examScores" rows="10"
+            placeholder="一列一成績, 依序輸入數字"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="Color">柱顏色</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Color" id="Color" value="blue" checked>            
+            <label class="form-check-label" for="Color" style="background-color:Blue; border: solid 1px;">　　</label>
+          </div>          
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Color" id="Color" value="cyan">
+            <label class="form-check-label" for="Color" style="background-color:cyan; border: solid 1px;">　　</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Color" id="Color" value="green">
+            <label class="form-check-label" for="Color" style="background-color:green; border: solid 1px;">　　</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Color" id="Color" value="black">
+            <label class="form-check-label" for="Color" style="background-color:black; border: solid 1px;">　　</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Color" id="Color" value="magenta">
+            <label class="form-check-label" for="Color" style="background-color:magenta; border: solid 1px;">　　</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Color" id="Color" value="yellow">
+            <label class="form-check-label" for="Color" style="background-color:yellow; border: solid 1px;">　　</label>
+          </div>
+        </div>
+
+        <div class="form-group"></div>
+          <label for="Alpha">透明度</label>
+          <input type="number" id="Alpha" name="Alpha" min="0.2" max="1.0" step="0.1" value=0.4>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">上傳</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+gunicorn
+flask
+PyMySQL
+openpyxl
+numpy
+matplotlib

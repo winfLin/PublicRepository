@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}- 級距表{% endblock %}
+
+{% block MyStyle %}
+img {
+  display:block; margin:auto;
+}
+
+{% endblock %}
+
+
+
+
+{% block MyJS %}
+function myCopy() {
+var myURL = document.getElementById("myURL");
+myURL.select();
+myURL.setSelectionRange(0, 99999); /* For mobile devices */
+
+document.execCommand('copy');
+alert( myURL.value + ' 已複製至剪貼簿');
+
+navigator.clipboard.writeText(myURL.value);
+
+}
+
+{% endblock %}
+{% block main %}
+<input type="text" size="60" value="https://{{ domain }}/{{Sid}}" id="myURL"><button onclick="myCopy();">複製網址</button>
+<h2>級距表</h2>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        {% for tr in header %}
+        <th>{{ tr[0] }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for tr in result %}
+      <tr>
+        {% for i in range(13) %}
+        <td align="center">{{ tr[i] }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <img src={{ url_for('static', filename='rankImg/' + Sid + '.png' ) }} border="1" />
+  <img src="static/rankImg/{{ Sid }}.png" border="1" />
+</div>
+{% endblock %}
